@@ -1,0 +1,2 @@
+import { ThemeWorkbench } from "@/components/site/theme-workbench";
+export default function CreatePage(){return <div className="site-container py-12"><h1 className="text-4xl font-semibold tracking-tight">Make the foundation yours.</h1><p className="mt-4 mb-10 max-w-2xl text-muted-foreground">Adjust the tokens, compare the results, and copy the CSS into your own project. The complete source is included in this handoff.</p><ThemeWorkbench/></div>;}

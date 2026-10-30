@@ -1,0 +1,2 @@
+import { SpendingChart } from "@/components/site/spending-chart";
+export default function ChartsPage(){return <div className="site-container py-12"><h1 className="text-4xl font-semibold tracking-tight">Charts</h1><p className="mt-4 mb-10 max-w-2xl text-muted-foreground">A strictly neutral chart with labeled series, an interactive tooltip, and the underlying values in a readable table.</p><div className="max-w-3xl rounded-2xl border p-6"><h2 className="mb-6 font-medium">Spending and savings · sample data</h2><SpendingChart/></div></div>;}

@@ -1,0 +1,3 @@
+import { Dashboard, GoalCard, SavingsCard } from "@/components/site/dashboard";
+import { ChatPreview } from "@/components/site/chat-preview";
+export default function BlocksPage(){return <div className="site-container py-12"><h1 className="text-4xl font-semibold tracking-tight">Blocks</h1><p className="mt-4 mb-10 text-muted-foreground">Complete compositions built from small, editable pieces. All values are demonstration data.</p><Dashboard/><section aria-label="Reusable card blocks" className="mt-10 grid items-start gap-6 md:grid-cols-2 xl:grid-cols-3"><GoalCard/><SavingsCard/><ChatPreview/></section></div>;}

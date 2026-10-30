@@ -1,0 +1,48 @@
+REFERENCE DATE: 2026-10-18
+UPSTREAM: https://github.com/shadcn-ui/ui
+COMMIT: daaf156ee00ed91cc7e6bdd937c1b4973152d141
+
+SOURCE -> LOCAL IMPLEMENTATION
+apps/v4/app/(app)/(root)/page.tsx -> app/page.tsx
+apps/v4/components/page-header.tsx -> .hero in app/globals.css
+apps/v4/components/site-header.tsx -> components/site/header.tsx
+apps/v4/components/main-nav.tsx -> lib/navigation.ts + header.tsx
+apps/v4/app/(app)/(root)/cards/index.tsx -> home-preview.tsx + .specimen-grid
+apps/v4/app/globals.css -> semantic roles in app/globals.css
+
+MEASURED / SOURCE-DERIVED
+- 64px sticky header, Geist, centered hero, 48px headline at laptop/desktop.
+- The measured 1366px headline width is 810.671875px in both reference and local
+  build. Local heading top was 180px; reference inspection reported 181px.
+- Equal preview columns, 24px laptop gaps/padding, four columns from 1400px,
+  five from 1900px, 40px gaps and 48px padding at the widest breakpoint.
+- Component sampler belongs in the first column above navigation examples.
+- Neutral semantic roles, pill buttons, 24px preview cards, thin seams.
+
+INTENTIONAL DIFFERENCES REQUIRED BY THE BRIEF
+- Original supporting copy, fixtures, and demonstration actions.
+- Independent monochrome/ui wordmark and explicit attribution.
+- Working mobile previews instead of the upstream static dashboard image.
+- No colored chart/status/destructive tokens; no gradients.
+- Lucide icons instead of the repository's mixed icon-family dependencies.
+- A complete dashboard and feature sections below the main preview, as requested.
+- Themes/Templates routes from the brief rather than claiming to reproduce
+  the upstream Directory/Typeset products or its full documentation corpus.
+- Financial controls, chat, QR, and profile actions are honest local demos.
+- A readable chart data alternative, stronger control/focus boundaries, and
+  corrected numeric progress semantics.
+- Neutral OKLCH roles and 0.625rem radius follow the final supplied theme.
+  Dark/light chart and destructive roles remain achromatic. Placeholder text
+  and keyboard-key labels use a stronger neutral on muted surfaces; explicit
+  focus outlines use a high-contrast neutral rather than a translucent ring.
+- Geist Sans, cv11/ss01 font features, and -0.011em body tracking follow the
+  final typography steering. Existing heading-specific tracking is retained.
+- components.json selects radix-nova for future CLI additions. The official
+  homepage's preview composition itself mixes style families; the setup preset
+  alone does not reproduce that composition.
+
+SCOPE
+This is a standalone interactive reference implementation, not a byte-for-byte
+copy of the entire shadcn monorepo. The existing Hub was not modified.
+The supplied upstream snapshots make the reference traceable and repeatable.
+Screenshot-level fidelity is not certified while Froots capture is off-screen.

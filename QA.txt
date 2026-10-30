@@ -1,0 +1,88 @@
+CATALOG UPDATE — 2026-10-18
+
+CURRENT UPDATE
+- Neutral OKLCH background/foreground, 0.625rem radius and Geist retained.
+- Imported shadcn/tailwind.css; monochrome destructive/chart tokens retained.
+- Full registry install using shadcn 4.22.1, radix-nova, neutral.
+- Existing customized primitive APIs restored after registry generation.
+- 67 catalog demonstrations including Trace, Code Block, Attachment, Bubble,
+  Direction, Marker, Message, Message Scroller, Native Select and Questionnaire.
+- Trace uses explicit status words and full-opacity neutral secondary text.
+- Optional syntax highlighting renders token content in neutral foreground.
+- Next.js patched from 15.5.20 to 15.5.28.
+- Current strict TypeScript, six regression tests and production build pass.
+- Current browser navigation did not complete; no new live viewport, keyboard,
+  screenshot, hydration or console sign-off is claimed for these additions.
+- Review dependency-audit.json for remaining advisories before deployment.
+
+REQUIRED QA FOR THIS UPDATE
+- Test all ten new demonstrations in both themes, at 320–1920px.
+- Trace: Tab to the button, Enter/Space expands and collapses, aria-expanded
+  follows state, all four statuses remain understandable without color.
+- Code Block: horizontal overflow stays inside the pre, copy works on HTTPS,
+  denied clipboard access gives failure feedback, keyboard focus is visible.
+- Questionnaire: required choice validation, Next, Back, Finish and reset flow.
+- Message Scroller: keyboard scroll, end button, scroll position and reduced motion.
+- Theme consistency for all portaled content and native select options.
+- Re-run complete keyboard, screen-reader and rendered contrast review.
+
+EARLIER BASELINE (not rerun for this update)
+
+LOCAL REVIEW BUILD — 2026-10-18
+
+PASS
+- Strict TypeScript and optimized Next.js production build.
+- Six regression tests: transaction search; numeric sorting/source immutability;
+  invalid goal values and impossible dates; catalog anchor uniqueness; exposed
+  numeric progress semantics; actual CSS neutral channels and AA role contrast.
+- 57 live component examples; nine working content routes plus not-found page.
+- Static server returns 200 for all content routes and favicon; absent page 404.
+- Froots DOM layout matrix for /, /components, /blocks, /themes at
+  320/375/768/1024/1440/1920px: no horizontal document overflow after repairs.
+  The final light-mode build passed all 24 cases with the supplied OKLCH roles.
+  The 320px chart initially caused overflow; its prerender width and containment
+  were corrected, then the complete matrix was repeated successfully.
+- Actual Cmd+K opens the search dialog and focuses its combobox.
+- Escape changes the dialog to closed. Off-screen animation completion and
+  post-close focus return still require an on-screen check.
+- Component search filters the live catalog to the matching examples.
+- Dark-example control changes the document and component theme.
+- Transaction status filter narrows to matching records; selecting the current
+  page checks those rows and updates the count and aria-checked values.
+- Chat accepts a local message, starts its scripted stream, and reset clears
+  the thread/cancels streaming. No external AI or upload request is made.
+- Fresh instrumented development reloads of tested pages captured no application
+  runtime/hydration errors. Temporary diagnostics were removed before packaging.
+  Froots numeric-reference probes generated their own invalid-selector errors
+  during interaction testing; these were not application exceptions.
+- Latest shadcn CLI checked: 4.22.1. Final preset resolve reports nova, neutral,
+  neutral chart color, Lucide, Geist, default radius (code b2fA).
+- Requested neutral migration was attempted and correctly rejected because
+  baseColor was already neutral. No alternate-color detour or cn migration ran.
+
+FIXES FOUND DURING THIS BUILD
+- Tailwind 4 configuration matches the locally owned component syntax.
+- Explicit data-state variants handle Radix open/checked/active states.
+- Command dialog accessible title/description live inside its portaled content.
+- Progress passes its numeric value to the underlying accessible primitive.
+- Keyboard focus uses a high-contrast neutral outline above utility resets.
+- Placeholder/keycap contrast is strengthened on muted backgrounds.
+- Mobile dashboard navigation opens a sheet rather than an invisible sidebar.
+- Calendar keyboard month navigation clamps to valid days and uses UTC.
+- Chat IDs are allocated outside React state updaters; interval cleanup is explicit.
+
+PENDING BEFORE RELEASE
+- On-screen screenshot comparison against the current reference, in both modes.
+  Froots reports its pane parked off-screen and refuses meaningful captures.
+  DOM measurements are not pixel-perfect visual certification.
+- Full keyboard traversal, focus return after every overlay, mobile drawer/menu,
+  combobox arrow/Enter/Escape behavior, calendar navigation, and touch testing.
+- Screen-reader checks for labels, announcements, table selection, and charts.
+- Real-device zoom, reduced-motion/forced-color behavior, and performance review.
+- The static package is an interactive demo foundation, not connected financial,
+  authentication, profile, notification, AI, or persistence functionality.
+
+BOUNDARIES
+The Marketing Hub remains unchanged. No production settings or database changes.
+Nothing deployed. User visual approval remains the release gate.
+See SOURCE-COMPARISON.txt for reference commit and deliberate differences.
